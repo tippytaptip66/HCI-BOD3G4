@@ -67,7 +67,7 @@ const button = (text, action, style = 'primary', value = '') => `<button type="b
 const inline = (text, action, value = '') => `<button type="button" class="link-btn" data-action="${action}" data-value="${escape(value)}">${escape(text)}</button>`;
 const submit = text => `<button class="btn primary" type="submit">${escape(text)}</button>`;
 const actions = (items, extra = '') => `<div class="actions ${extra}">${items.join('')}</div>`;
-const brand = (target = 'home') => `<a class="brand" href="#${target}"><span aria-hidden="true">B</span>Bodega</a>`;
+const brand = (target = 'home') => `<a class="brand" href="#${target}"><img class="brand-icon" src="assets/bodega-icon.png" alt="">Bodega</a>`;
 const uiIcon = name => `<i class="ui-icon ui-${name}" aria-hidden="true"></i>`;
 const markCurrent = selected => selected ? ' aria-current="page"' : '';
 const heading = (title, description, links = []) => `<header class="heading"><div><h1>${title}</h1><p>${description}</p></div>${links.length ? actions(links) : ''}</header>`;
@@ -196,7 +196,7 @@ function requestForm() {
   </section>`;
 }
 function login() {
-  return `<main class="login"><section class="login-story"><a href="#home">Bodega</a><div>${pill('WAREHOUSE MANAGEMENT','sky')}<h1>A clearer shift.<br>Starts here.</h1>
+  return `<main class="login"><section class="login-story">${brand()}<div>${pill('WAREHOUSE MANAGEMENT','sky')}<h1>A clearer shift.<br>Starts here.</h1>
     <p class="muted">One trusted view of every item,<br>every bin, and every next step.</p>
     <div class="login-stats">${label('Your shift, at a glance','sky')}<div class="metric-grid"><div><strong>24</strong><span class="muted">open orders</span></div><div><strong>18</strong><span class="muted">ready to ship</span></div></div><span class="green">✓ Current locations. Fewer empty-bin trips.</span></div></div>
     <small>Designed for warehouses in the Philippines.</small></section>
@@ -530,7 +530,7 @@ function handheld(order) {
       <a href="#picking">‹ Back to assigned orders</a>`);
   }
   return `<div class="handheld"><div class="pick-site-bar">${siteBar('demo')}</div>
-    <header class="handhead"><a href="#home">Bodega</a><div><a href="#demo">‹ Orders</a><small>● Up to date</small></div></header>
+    <header class="handhead">${brand()}<div><a href="#demo">‹ Orders</a><small>● Up to date</small></div></header>
     <main class="handmain"><div class="pick-desktop-nav"><a href="#demo">‹ Orders</a>${status()}</div>${progressBar}${content}</main>
     <nav class="handnav" aria-label="Warehouse modules">${[['overview','Home'],['receiving','Receive'],['inventory','Stock'],[pickOrders(),'Pick'],['shipping','Ship'],['reports','Reports']].map(([target,text]) => `<a href="#${target}"${markCurrent(text === 'Pick')}>${uiIcon(text === 'Pick' ? 'picking' : text === 'Home' ? 'home' : target)}${text}</a>`).join('')}</nav></div>`;
 }

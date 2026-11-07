@@ -32,7 +32,7 @@ html[data-theme="light"] body.landing {color-scheme:light;--land-bg:#fff;--land-
 .landing-bar nav a {color:var(--land-muted)}
 .landing-bar nav a[aria-current] {color:var(--land-text);font-weight:600}
 .landing-brand {display:inline-flex;align-items:center;gap:8px;color:var(--land-text);font-size:17px;font-weight:700}
-.warehouse-mark {width:24px;height:24px;border-radius:7px;display:grid;place-items:center;background:var(--land-text);color:var(--land-bg)}
+.landing-brand .brand-icon {width:30px;height:24px;border-radius:5px}
 .landing-hero,.landing-floor,.landing-story,.landing-cta {text-align:center}
 .landing-hero {padding:72px 24px 0}
 .landing-kicker {font-size:17.6px;font-weight:600;color:var(--land-muted);margin-bottom:12px}
@@ -61,10 +61,10 @@ a.landing-button:hover {background:#1688f3;text-decoration:none}
 .landing-footer button {border:1px solid #3b3b40;border-radius:30px;color:inherit;background:transparent;padding:8px 13px;white-space:nowrap}
 .brand {display:inline-flex;align-items:center;gap:12px;font-size:24px;font-weight:750;color:var(--text)}
 .brand:hover {text-decoration:none}
-.brand span {display:grid;place-items:center;background:var(--blue);border-radius:10px;width:36px;height:36px;font-size:24px;color:#fff}
+.brand-icon {width:42px;height:36px;object-fit:contain;border-radius:6px;flex:none}
 .site-bar {background:var(--bar);min-height:80px;padding:12px max(24px,5vw);display:flex;align-items:center;justify-content:space-between;gap:20px}
 .site-bar .brand {font-size:20px}
-.site-bar .brand span {width:29px;height:29px;font-size:20px;border-radius:8px}
+.site-bar .brand-icon,.handhead .brand-icon {width:36px;height:29px}
 .site-bar nav {display:flex;gap:clamp(16px,4.5vw,60px);align-items:center;margin-left:auto;margin-right:clamp(0px,10vw,135px);font-size:13px}
 .site-bar nav a {color:var(--muted)}
 .site-bar nav a[aria-current] {color:var(--text);font-weight:bold}
@@ -247,7 +247,7 @@ html {scrollbar-gutter:stable}
   .workspace {display:block}
   .sidebar {position:static;height:auto;min-height:0;padding:14px 16px}
   .sidebar .brand {font-size:20px;margin:0}
-  .sidebar .brand span {width:28px;height:28px;font-size:18px}
+  .sidebar .brand-icon {width:35px;height:28px}
   .sidebar nav {display:flex;overflow:auto;margin-top:12px}
   .sidebar nav a {min-height:44px;white-space:nowrap;padding:0 12px}
   .sidebar .eyebrow,.sidebar-foot {display:none}
@@ -312,11 +312,9 @@ html {scrollbar-gutter:stable}
 
 @font-face {font-family:BodegaUIcons;src:url("assets/uicons-regular-rounded.woff2") format("woff2");font-display:block}
 .ui-icon {display:inline-block;flex:none;width:1em;text-align:center;font-family:BodegaUIcons;font-style:normal;font-weight:400;line-height:1}
-.warehouse-mark .ui-icon {font-size:15px}
 .sidebar nav a .ui-icon {font-size:16px}
 .handnav a {display:grid;justify-items:center;gap:5px}
 .handnav .ui-icon {font-size:16px}
-.ui-warehouse::before {content:"\f5bb"}
 .ui-overview::before {content:"\e639"}
 .ui-receiving::before {content:"\eb01"}
 .ui-inventory::before {content:"\e2a6"}
