@@ -88,9 +88,9 @@ const layout = (title, section, content) => {
   return `<div class="workspace">
     <aside class="sidebar">${brand('overview')}${label('Main workspace')}
       <nav aria-label="Workspace">${navigation.map(([id,text]) => `<a href="#${id}"${markCurrent(section === id)}>${uiIcon(id)}${text}</a>`).join('')}</nav>
-      <div class="sidebar-foot"><p>Valenzuela · Warehouse 01</p><p>EN / Filipino <a href="#login" data-action="sign-out">☼ Sign out</a></p><small>Sample data · Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a></small></div>
+      <div class="sidebar-foot"><p>Valenzuela · Warehouse 01</p><p>EN / Filipino</p><small>Sample data · Uicons by <a href="https://www.flaticon.com/uicons">Flaticon</a></small></div>
     </aside>
-    <div class="workarea"><header class="workbar"><div>${label('Bodega / Warehouse')}<h2>${title}</h2></div>${status()}<div class="who"><span class="avatar">${escape(name.split(/\s+/).slice(0,2).map(part => part[0]).join(''))}</span>${escape(name.split(' ')[0])}</div></header>
+    <div class="workarea"><header class="workbar"><div>${label('Bodega / Warehouse')}<h2>${title}</h2></div>${status()}<div class="who"><span class="avatar">${escape(name.split(/\s+/).slice(0,2).map(part => part[0]).join(''))}</span>${escape(name.split(' ')[0])}</div><button type="button" class="btn sign-out" data-action="sign-out">Sign out</button></header>
       <main class="workmain">${content}</main>
     </div></div>`;
 };
@@ -840,6 +840,7 @@ window.addEventListener('storage',event => {
   if (event.key === 'bodega-dispatched') state.dispatched = readSaved('dispatched',[]);
 });
 render();
+
 
 
 
