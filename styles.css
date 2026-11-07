@@ -146,7 +146,9 @@ a.landing-button:hover {background:#1688f3;text-decoration:none}
 .sidebar-foot a {color:inherit}
 .workbar {min-height:88px;background:var(--bar);display:flex;align-items:center;gap:28px;padding:14px 32px}
 .workbar h2 {font-size:20px;margin-top:6px}
-.workbar .pill {margin-left:auto}
+.workbar > div:first-child {flex:1;min-width:0}
+.workbar .sign-out {flex:none;justify-content:center;min-width:126px;background:#ad2534;color:#fff;font-size:16px}
+.workbar .sign-out:hover {background:#c12d3d}
 .avatar {width:40px;height:40px;border-radius:50%;background:#31313b;display:grid;place-items:center;font-size:13px;font-weight:750}
 .who {display:flex;align-items:center;gap:14px;font-size:14px;margin:0 20px 0 25px}
 .workmain {padding:30px clamp(22px,3.15vw,44px) 44px}
@@ -254,6 +256,7 @@ html {scrollbar-gutter:stable}
   .workbar {padding:14px 18px;min-height:68px;gap:10px}
   .workbar h2 {font-size:17px}
   .who {display:none}
+  .workbar .sign-out {min-width:104px;min-height:48px;padding-inline:16px}
   .columns,.columns.reverse {grid-template-columns:1fr}
   .metric-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
   .tabs {grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
@@ -323,3 +326,10 @@ html {scrollbar-gutter:stable}
 .ui-reports::before {content:"\e40d"}
 .ui-accounts::before {content:"\f4f9"}
 .ui-home::before {content:"\ea8b"}
+
+@media (max-width:480px) {
+  .workbar {flex-wrap:wrap}
+  .workbar > div:first-child {flex-basis:calc(100% - 120px)}
+  .workbar .pill {order:1}
+}
+
