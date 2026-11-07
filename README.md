@@ -8,5 +8,5 @@ Sign-in and operations use sample data. Changes and demo requests are kept in th
 
 The warehouse photos were exported from the supplied Figma design. Photo credit is shown in the site footer.
 
-HCI FINAL PROJECT
+### HCI FINAL PROJECT
 
